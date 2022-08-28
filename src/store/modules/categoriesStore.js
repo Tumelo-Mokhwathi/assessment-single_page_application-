@@ -4,6 +4,7 @@ import GettersUtility from '@/store/utilities/getters';
 import MutationsUtility from '@/store/utilities/mutations';
 
 const BASE_URL = `${process.env.VUE_APP_PROXY_BASE}`;
+const CATEGORIES_BASE_URL = 'https://api.chucknorris.io/jokes';
 
 const M_SET_CLEAR = 'Reset';
 const M_SET_CATEGORY = 'SetCategory';
@@ -35,7 +36,7 @@ const actions = {
     Axios(requestObj)
       .then((response) => {
         context.commit(M_SET_DATA,
-          response.data.map((name, index) => ({
+          response.data.result.map((name, index) => ({
             name,
             index,
           })));
@@ -52,7 +53,7 @@ const actions = {
     context.commit(M_SET_CATEGORY, null);
 
     const requestObj = {
-      url: `${BASE_URL}/random?category=${category}`,
+      url: `${CATEGORIES_BASE_URL}/random?category=${category}`,
       method: 'get',
       headers: {
         'Content-Type': 'application/json',

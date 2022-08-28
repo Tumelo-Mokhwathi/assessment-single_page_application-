@@ -32,7 +32,8 @@ const actions = {
 
     Axios(requestObj)
       .then((response) => {
-        context.commit(M_SET_DATA, response.data.results);
+        console.log(response);
+        context.commit(M_SET_DATA, response.data.result);
       })
       .catch(() => {
         throw Error('Could not fetch data');

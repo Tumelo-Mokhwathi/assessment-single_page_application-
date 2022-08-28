@@ -38,22 +38,22 @@ export default {
           sortable: true,
         },
         {
-          key: 'hair_color',
+          key: 'hairColor',
           label: 'HairColor',
           sortable: true,
         },
         {
-          key: 'skin_color',
+          key: 'skinColor',
           label: 'SkinColor',
           sortable: true,
         },
         {
-          key: 'eye_color',
+          key: 'eyeColor',
           label: 'EyeColor',
           sortable: true,
         },
         {
-          key: 'birth_year',
+          key: 'birthYear',
           label: 'BirthYear',
           sortable: true,
         },
